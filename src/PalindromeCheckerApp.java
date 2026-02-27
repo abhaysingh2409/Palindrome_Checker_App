@@ -13,6 +13,19 @@ public  class PalindromeCheckerApp{
         return true;
     }
 
+    public static Boolean PalindromeChecker2(String str){
+        String  reversedText = "";
+        for(int i = str.length() -1; i>=0; i--){
+            reversedText = reversedText + str.charAt(i);
+        }
+        if (str.equals(reversedText)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 
     static void main() {
         System.out.println("Welcome to the Palindrome Checker Management System");
@@ -23,6 +36,8 @@ public  class PalindromeCheckerApp{
         String str =sc.nextLine();
 
         System.out.println(PalindromeChecker(str));
+        System.out.println("Compare original and reversed\n");
+        System.out.println(PalindromeChecker2(str));
         sc.close();
 
 
