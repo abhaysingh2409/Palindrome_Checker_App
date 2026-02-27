@@ -51,6 +51,23 @@ public  class PalindromeCheckerApp{
 
 
     }
+    public static Boolean PalindromeChecker4(String str){
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < str.length(); i++) {
+            stack.push(str.charAt(i));
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != stack.pop()) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
+
 
 
     static void main() {
@@ -64,7 +81,10 @@ public  class PalindromeCheckerApp{
         System.out.println(PalindromeChecker(str));
         System.out.println("Compare original and reversed\n");
         System.out.println(PalindromeChecker2(str));
+        System.out.println("\n");
         System.out.println(PalindromeChecker3(str));
+        System.out.println("\n");
+        System.out.println(PalindromeChecker4(str));
 
         sc.close();
 
