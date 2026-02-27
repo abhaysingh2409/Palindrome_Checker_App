@@ -87,6 +87,26 @@ public  class PalindromeCheckerApp {
         return true;
     }
 
+    public static Boolean PalindromeChecker6(String str) {
+        Deque<Character> deque = new LinkedList<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            deque.addLast(str.charAt(i));
+        }
+
+        while (deque.size() > 1) {
+            char front = deque.removeFirst();
+            char rear = deque.removeLast();
+
+            if (front != rear) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
 
     static void main() {
         System.out.println("Welcome to the Palindrome Checker Management System");
@@ -105,6 +125,8 @@ public  class PalindromeCheckerApp {
         System.out.println(PalindromeChecker4(str));
         System.out.println("\n");
         System.out.println(PalindromeChecker5(str));
+        System.out.println("\n");
+        System.out.println(PalindromeChecker6(str));
 
         sc.close();
 
