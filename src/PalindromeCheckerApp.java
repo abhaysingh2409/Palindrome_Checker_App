@@ -25,6 +25,32 @@ public  class PalindromeCheckerApp{
         }
 
     }
+    public static Boolean PalindromeChecker3(String str1){
+
+        char[] str = str1.toCharArray();
+
+        int start = 0;
+        int end = str.length - 1;
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if (str[start] != str[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+
+        // Output result
+        if (isPalindrome) {
+            return true;
+        } else {
+            return false;
+        }
+
+
+    }
 
 
     static void main() {
@@ -38,6 +64,8 @@ public  class PalindromeCheckerApp{
         System.out.println(PalindromeChecker(str));
         System.out.println("Compare original and reversed\n");
         System.out.println(PalindromeChecker2(str));
+        System.out.println(PalindromeChecker3(str));
+
         sc.close();
 
 
