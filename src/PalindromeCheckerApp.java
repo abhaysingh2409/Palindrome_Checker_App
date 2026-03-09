@@ -135,6 +135,17 @@ public  class PalindromeCheckerApp {
         return  PalindromeChecker8(str,start + 1, end - 1);
     }
 
+    public static boolean PalindromeChecker9(String str) {
+        // Normalize string: remove spaces, lowercase
+        String st = str.replaceAll("\\s+", "").toLowerCase();
+
+        // Call recursive checker
+        return PalindromeChecker8(st, 0, st.length() - 1);
+    }
+
+
+
+
 
 
 
@@ -164,6 +175,7 @@ public  class PalindromeCheckerApp {
         System.out.println(PalindromeChecker7(str));
         System.out.println("\n recursive");
         System.out.println(PalindromeChecker8(str, 0, str.length() - 1));
+        System.out.println(PalindromeChecker9(str));
         sc.close();
 
 
