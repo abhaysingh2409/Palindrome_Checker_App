@@ -105,6 +105,24 @@ public  class PalindromeCheckerApp {
 
         return true;
     }
+    public static Boolean PalindromeChecker7(String str) {
+        LinkedList<Character> list = new LinkedList<>();
+        for (char ch : str.toCharArray()) {
+            list.add(ch);
+        }
+
+        ListIterator<Character> forward = list.listIterator();
+        ListIterator<Character> backward = list.listIterator(list.size());
+
+        while (forward.nextIndex() < backward.previousIndex()) {
+            if (!forward.next().equals(backward.previous())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 
 
 
@@ -127,6 +145,8 @@ public  class PalindromeCheckerApp {
         System.out.println(PalindromeChecker5(str));
         System.out.println("\n");
         System.out.println(PalindromeChecker6(str));
+        System.out.println("\n");
+        System.out.println(PalindromeChecker7(str));
 
         sc.close();
 
